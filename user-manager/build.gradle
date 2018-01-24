@@ -1,0 +1,47 @@
+group 'sample-rest-api'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+configurations {
+    compile {
+        description = 'compile classpath'
+        transitive = true
+    }
+    runtime {
+        extendsFrom compile
+    }
+}
+
+configurations.compile {
+    description = 'compile classpath'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Rest Api sample',
+                'Implementation-Version': version,
+                'Main-Class': 'com.fc.samples.restservice.UserManagement'
+    }
+    baseName = project.name
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.sparkjava:spark-core:2.7.1'
+    compile 'org.dizitart:nitrite:2.1.0'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

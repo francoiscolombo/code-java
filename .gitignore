@@ -1,0 +1,6 @@
+.idea
+*.iml
+/user-manager/.gradle/
+/user-manager/gradle/
+/user-manager/gradlew.bat
+/user-manager/gradlew
