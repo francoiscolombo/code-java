@@ -16,10 +16,10 @@ clean the project:
     BUILD SUCCESSFUL in 1s
     1 actionable task: 1 up-to-date
 
-run the gradle **fatJar** task:
+run the gradle **createJar** task:
 
-    $ ./gradlew fatJar
-    
+    $ ./gradlew createJar
+
     BUILD SUCCESSFUL in 4s
     2 actionable tasks: 2 executed
 

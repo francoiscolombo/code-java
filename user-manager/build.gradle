@@ -19,7 +19,7 @@ configurations.compile {
     description = 'compile classpath'
 }
 
-task fatJar(type: Jar) {
+task createJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Rest Api sample',
                 'Implementation-Version': version,
