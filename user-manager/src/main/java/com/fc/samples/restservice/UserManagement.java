@@ -17,7 +17,7 @@ public class UserManagement {
 
         port(8080);
 
-        threadPool(8, 2, 30000);
+        threadPool(40, 10, 30000);
 
         Gson gson = new Gson();
 
