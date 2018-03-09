@@ -4,3 +4,5 @@
 /user-manager/gradle/
 /user-manager/gradlew.bat
 /user-manager/gradlew
+/user-manager/build/
+/user-manager/out/
