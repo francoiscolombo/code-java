@@ -1,0 +1,30 @@
+version: '3.3'
+
+volumes:
+  data_vol:
+
+services:
+  usermanager:
+    image: fc/samples/java/restapi:latest
+    container_name: usermanager
+    restart: always
+    build:
+      context: .
+# if you need to pass behind a proxy
+#      args:
+#        proxy: "<your proxy address>"
+    volumes:
+     - data_vol:/data
+    ports:
+     - 8080:8080
+    networks:
+      - ws_local_network
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 32000
+        hard: 40000
+
+networks:
+  ws_local_network:
+    driver: bridge

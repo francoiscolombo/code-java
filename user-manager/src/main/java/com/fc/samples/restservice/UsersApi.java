@@ -17,7 +17,7 @@ public class UsersApi {
     public static void init() {
         db = Nitrite.builder()
                 .compressed()
-                .filePath("/tmp/users.db")
+                .filePath("/data/users.db")
                 .openOrCreate("admin","admin");
         repository = db.getRepository(User.class);
     }

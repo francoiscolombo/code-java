@@ -31,7 +31,8 @@ you will find the resulting jar in the directory:
 
 ### How to run?
 
-Simply run the jar or directly the class `com.fc.samples.restservice.UserManagement`.
+Simply run the jar or directly the class `com.fc.samples.restservice.UserManagement`, or you can build a docker container
+and run it (see below)
 
     java -jar build/libs/user-manager-1.0-SNAPSHOT.jar 
     [main] INFO org.eclipse.jetty.util.log - Logging initialized @157ms to org.eclipse.jetty.util.log.Slf4jLog
@@ -158,3 +159,13 @@ on a real project.
 
 this is a very simple sample, and it misses a lot of things, but you can see how easy it is to implement
 REST api with Java 8.
+
+### How to build a docker container?
+
+You can use the [docker file](./user-manager/Dockerfile), but I advise to use the [Docker Compose](./user-manager/docker-compose.yml) file provided.
+
+Simply use ``docker-compose build`` to build the container. Please note that you first need to build the .jar before, since the
+docker container needs it. See the section [how to build jar](#how-to-build-the-.jar?).
+
+Then after, you can run the service with ``docker-compose up -d``, and shutdown it with ``docker-compose down -v``.
+Use ``docker-compose ps`` to see if your service is running.
