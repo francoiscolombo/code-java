@@ -1,8 +1,5 @@
 version: '3.3'
 
-volumes:
-  data_vol:
-
 services:
   usermanager:
     image: fc/samples/java/restapi:latest
@@ -14,7 +11,7 @@ services:
 #      args:
 #        proxy: "<your proxy address>"
     volumes:
-     - data_vol:/data
+     - /tmp:/data
     ports:
      - 8080:8080
     networks:
